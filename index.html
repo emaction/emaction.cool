@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -6,70 +5,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="canonical" href="https://emaction.cool" />
-  <title>emaction - GitHub styled emoji reaction for Blogs.</title>
+  <script src="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css@21.0.7/dist/primer.min.css">
   <script type="module" src="https://cdn.jsdelivr.net/gh/emaction/frontend.dist@1.0.4/bundle.js"></script>
 </head>
 
-<body>
-  <h1 id="easy-to-use-github-styled-emoji-reaction-for-blogs-">Easy to use GitHub Styled emoji reaction for Blogs.</h1>
-  <h2>Demo</h2>
-  <emoji-reaction></emoji-reaction>
-  <h2 id="get-started">Get started</h2>
-  <h3 id="via-cdn-recommended-">Via CDN (Recommended)</h3>
-  <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/emaction/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afce8f5f4eefff4feb4fef3e9eedaabb4aab4a8">[email&#160;protected]</a>/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<body style="display: flex; justify-content: center;">
+  <div class="markdown-body" style="padding: 0 0.5rem 0.5rem 0.5rem; max-width: 42rem; width: 100%;">
+<h1 id="easy-to-use-github-styled-emoji-reaction-for-blogs">Easy to use GitHub Styled emoji reaction for Blogs.</h1>
+<h2 id="demo">Demo</h2>
+<emoji-reaction></emoji-reaction>
+<h2 id="get-started">Get started</h2>
+<h3 id="via-cdn-recommended">Via CDN (Recommended)</h3>
+<pre><code>&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/gh/emaction/frontend.dist@1.0.4/bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-  <h3 id="npm">NPM</h3>
-  <pre><code>npm <span class="hljs-keyword">install</span> emaction
+<p>then</p>
+<pre><code>&lt;emoji-reaction&gt;&lt;/emoji-reaction&gt;
 </code></pre>
-  <h2 id="configuration">Configuration</h2>
-  <h3 id="custom-emojis">Custom emojis</h3>
-  <p>You can specify custom emoji through the <code>availableArrayString</code> property like this:</p>
-  <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">emoji-reaction</span> <span class="hljs-attr">availableArrayString</span>=<span class="hljs-string">"👍,thumbs-up;😄,smile-face;🎉,party-popper;😕,confused-face;❤️,red-heart;🚀,rocket;👀,eyes;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">emoji-reaction</span>&gt;</span>
+<h3 id="npm">NPM</h3>
+<pre><code>npm install emaction
 </code></pre>
-  <h3 id="custom-theme">Custom theme</h3>
-  <p>You can specify background color, font color, border color, etc. through CSS variables like this(you can name the
-    class whatever you want):</p>
-  <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-  <span class="hljs-selector-class">.reactions</span> {
-    <span class="hljs-attribute">--start-smile-border-color</span>: <span class="hljs-number">#d0d7de</span>;
-    <span class="hljs-attribute">--start-smile-border-color-hover</span>: <span class="hljs-number">#bbb</span>;
-    <span class="hljs-attribute">--start-smile-bg-color</span>: <span class="hljs-number">#f6f8fa</span>;
-    <span class="hljs-attribute">--start-smile-svg-fill-color</span>: <span class="hljs-number">#656d76</span>;
-    <span class="hljs-attribute">--reaction-got-not-reacted-bg-color</span>: <span class="hljs-number">#fff</span>;
-    <span class="hljs-attribute">--reaction-got-not-reacted-bg-color-hover</span>: <span class="hljs-number">#eaeef2</span>;
-    <span class="hljs-attribute">--reaction-got-not-reacted-border-color</span>: <span class="hljs-number">#d0d7de</span>;
-    <span class="hljs-attribute">--reaction-got-not-reacted-text-color</span>: <span class="hljs-number">#656d76</span>;
-    <span class="hljs-attribute">--reaction-got-reacted-bg-color</span>: <span class="hljs-number">#ddf4ff</span>;
-    <span class="hljs-attribute">--reaction-got-reacted-bg-color-hover</span>: <span class="hljs-number">#b6e3ff</span>;
-    <span class="hljs-attribute">--reaction-got-reacted-border-color</span>: <span class="hljs-number">#0969da</span>;
-    <span class="hljs-attribute">--reaction-got-reacted-text-color</span>: <span class="hljs-number">#0969da</span>;
-    <span class="hljs-attribute">--reaction-available-popup-bg-color</span>: <span class="hljs-number">#fff</span>;
-    <span class="hljs-attribute">--reaction-available-popup-border-color</span>: <span class="hljs-number">#d0d7de</span>;
-    <span class="hljs-attribute">--reaction-available-popup-box-shadow</span>: <span class="hljs-number">#8c959f33</span> <span class="hljs-number">0px</span> <span class="hljs-number">8px</span> <span class="hljs-number">24px</span> <span class="hljs-number">0px</span>;
-    <span class="hljs-attribute">--reaction-available-emoji-reacted-bg-color</span>: <span class="hljs-number">#ddf4ff</span>;
-    <span class="hljs-attribute">--reaction-available-emoji-bg-color-hover</span>: <span class="hljs-number">#f3f4f6</span>;
-    <span class="hljs-attribute">--reaction-available-emoji-z-index</span>: <span class="hljs-number">100</span>;
-    <span class="hljs-attribute">--reaction-available-mask-z-index</span>: <span class="hljs-number">80</span>;
+<h2 id="configuration">Configuration</h2>
+<h3 id="custom-emojis">Custom emojis</h3>
+<p>You can specify custom emoji through the <code>availableArrayString</code> property like this:</p>
+<pre><code>&lt;emoji-reaction availableArrayString=&quot;👍,thumbs-up;😄,smile-face;🎉,party-popper;😕,confused-face;❤️,red-heart;🚀,rocket;👀,eyes;&quot;&gt;&lt;/emoji-reaction&gt;
+</code></pre>
+<h3 id="custom-theme">Custom theme</h3>
+<p>You can specify background color, font color, border color, etc. through CSS variables like this(you can name the class whatever you want):</p>
+<pre><code>&lt;style&gt;
+  .reactions {
+    --start-smile-border-color: #d0d7de;
+    --start-smile-border-color-hover: #bbb;
+    --start-smile-bg-color: #f6f8fa;
+    --start-smile-svg-fill-color: #656d76;
+    --reaction-got-not-reacted-bg-color: #fff;
+    --reaction-got-not-reacted-bg-color-hover: #eaeef2;
+    --reaction-got-not-reacted-border-color: #d0d7de;
+    --reaction-got-not-reacted-text-color: #656d76;
+    --reaction-got-reacted-bg-color: #ddf4ff;
+    --reaction-got-reacted-bg-color-hover: #b6e3ff;
+    --reaction-got-reacted-border-color: #0969da;
+    --reaction-got-reacted-text-color: #0969da;
+    --reaction-available-popup-bg-color: #fff;
+    --reaction-available-popup-border-color: #d0d7de;
+    --reaction-available-popup-box-shadow: #8c959f33 0px 8px 24px 0px;
+    --reaction-available-emoji-reacted-bg-color: #ddf4ff;
+    --reaction-available-emoji-bg-color-hover: #f3f4f6;
+    --reaction-available-emoji-z-index: 100;
+    --reaction-available-mask-z-index: 80;
   }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">emoji-reaction</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"reactions"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">emoji-reaction</span>&gt;</span>
+&lt;/style&gt;
+&lt;emoji-reaction class=&quot;reactions&quot;&gt;&lt;/emoji-reaction&gt;
 </code></pre>
-  <p>Where <code>start-smile</code> refers to the smile emoji that pops up the selectable emojis when clicked,
-    <code>reaction-got</code> refers to the emoji reactions the current page has received, <code>reacted</code> means
-    the current user has clicked that reaction, and <code>not-reacted</code> is the opposite,
-    <code>reaction-available</code> refers to the reactions available for clicking on the current page.</p>
-  <h3 id="dark-mode">Dark mode</h3>
-  <p>You can specify dark/light mode through the <code>theme</code> custom property, It supports <code>dark</code>,
-    <code>light</code>, and <code>system</code> options, with <code>light</code> as the default.</p>
-  <h3 id="custom-backend">Custom backend</h3>
-  <p>You can also reference <a href="https://github.com/emaction/emaction.backend">emaction.backend</a> to build your
-    own backend to save data, then specify the API address through the <code>endpoint</code> property.</p>
-  <h3 id="custom-page-id">Custom page id</h3>
-  <p>The page id is used to identify the current page. Data with the same page id will remain consistent. Generally you
-    don&#39;t need to specify the page id yourself, because emaction will follow the canonical meta to find the
-    canonical URL for the current content. If you do need to specify the page id, you can do so through the
-    <code>reactionTargetId</code> attribute.</p>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<p>Where <code>start-smile</code> refers to the smile emoji that pops up the selectable emojis when clicked, <code>reaction-got</code> refers to the emoji reactions the current page has received, <code>reacted</code> means the current user has clicked that reaction, and <code>not-reacted</code> is the opposite, <code>reaction-available</code> refers to the reactions available for clicking on the current page.</p>
+<h3 id="dark-mode">Dark mode</h3>
+<p>You can specify dark/light mode through the <code>theme</code> custom property, It supports <code>dark</code>, <code>light</code>, and <code>system</code> options, with <code>light</code> as the default.</p>
+<h3 id="custom-backend">Custom backend</h3>
+<p>You can also reference <a href="https://github.com/emaction/emaction.backend">emaction.backend</a> to build your own backend to save data, then specify the API address through the <code>endpoint</code> property.</p>
+<h3 id="custom-page-id">Custom page id</h3>
+<p>The page id is used to identify the current page. Data with the same page id will remain consistent. Generally you don&#39;t need to specify the page id yourself, because emaction will follow the canonical meta to find the canonical URL for the current content. If you do need to specify the page id, you can do so through the <code>reactionTargetId</code> attribute.</p>
+  </div>
+</body>
 
 </html>
